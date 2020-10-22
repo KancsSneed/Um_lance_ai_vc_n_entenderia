@@ -9,35 +9,35 @@ hora = 3600
 def segunda():
     if now.hour == 16:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        quit()
 def terca():
     if now.hour == 18:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        quit()
 def quarta():
     if now.hour == 10:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        sleep(hora * 6)
     if now.hour == 16:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        quit()
 def quinta():
     if now.hour == 9:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        sleep(hora * 6)
     if now.hour == 15:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        quit()
 def sexta():
     if now.hour == 10:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
         sleep(hora)
     if now.hour == 13:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        sleep(hora * 2)
     if now.hour == 15:
         os.startfile('https://meet.google.com/ozk-wrjk-zcy?pli=1&authuser=1')
-        sleep(hora)
+        quit()
 
 
 while True:
