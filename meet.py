@@ -25,8 +25,6 @@ else:
         arquivo.write(str(log))
 
 
-
-
 # 2° Etapa - Aulas
 
 #Funções da semana
