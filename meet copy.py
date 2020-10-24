@@ -60,5 +60,7 @@ while True:
         sexta()
     elif data.isoweekday() == 6 or 7:
         print("É feriado danado, vai dormir.")
-sleep(120)
+        quit()
+    sleep(120)
+    
 
