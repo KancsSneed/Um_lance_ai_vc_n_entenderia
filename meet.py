@@ -12,8 +12,6 @@ hora = 3600
         #1° etapa - configurando o log, caso o usuário não tenha logado
 
     #Interface
-
-
 fileName = r"log.txt"
 fileObj = Path(fileName)
 fileObj.is_file()
@@ -33,7 +31,7 @@ else:
         [sg.Button('Confirmar')]
     ]
     #Janela
-    janela = sg.Window('Tela de Login', layout)
+    janela = sg.Window('Configuração de log', layout)
     #Evento
     while True:
         evento, valor = janela.read()
@@ -43,7 +41,6 @@ else:
             #Salvar os dados e fechar a interface
             log = valor['log']
             break
-        sleep(5)
     with open('log.txt', 'w') as arquivo:
         arquivo.write(str(log))
 
