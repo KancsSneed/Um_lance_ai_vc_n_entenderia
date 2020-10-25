@@ -8,7 +8,11 @@ hora = 3600
 
     #execução do programa
 
-#1° etapa - configurando o log, caso o usuário não tenha logado
+        #1° etapa - configurando o log, caso o usuário não tenha logado
+
+    #Interface
+
+
 fileName = r"log.txt"
 fileObj = Path(fileName)
 fileObj.is_file()
@@ -20,7 +24,7 @@ if fileObj.is_file() == True:
             log = valor
 #Caso não exista irá criar
 else:
-    log = input("O que é para ser salvo?")
+    log = input('''Digite o URL da reunião já logado com a conta etepd:     ''')
     with open('log.txt', 'w') as arquivo:
         arquivo.write(str(log))
 
