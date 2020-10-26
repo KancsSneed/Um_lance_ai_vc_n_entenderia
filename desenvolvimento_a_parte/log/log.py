@@ -9,6 +9,5 @@ if fileObj.is_file() == True:
         for valor in arquivo:
             print(valor)
 else:
-    log = input("O que é para ser salvo?")
     with open('log.txt', 'w') as arquivo:
         arquivo.write(str(log))
