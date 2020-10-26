@@ -38,11 +38,10 @@ else:
         if evento == sg.WINDOW_CLOSED:
             break
         if evento == 'Confirmar':
-            #Salvar os dados e fechar a interface
             log = valor['log']
             break
     with open('log.txt', 'w') as arquivo:
-        arquivo.write(str(log))
+        arquivo.write(log)
 
 
 # 2° Etapa - Aulas
