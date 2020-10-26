@@ -4,6 +4,7 @@ from datetime import datetime
 from time import sleep
 from pathlib import Path
 from PySimpleGUI import PySimpleGUI as sg
+import pyautogui
 
 hora = 3600
 
@@ -43,41 +44,67 @@ else:
     with open('log.txt', 'w') as arquivo:
         arquivo.write(log)
 
-
 # 2° Etapa - Aulas
 
 #Funções da semana
 def segunda():
     if now.hour == 16:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         quit()
 def terca():
     if now.hour == 18:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         quit()
 def quarta():
     if now.hour == 10:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(2)
+        pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 16:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         quit()
 def quinta():
     if now.hour == 9:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 15:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         quit()
 def sexta():
     if now.hour == 10:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         sleep(hora * 3)
     elif now.hour == 13:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         sleep(hora * 2)
     elif now.hour == 15:
         os.startfile(log)
+        pyautogui.click(869, 501)
+        sleep(5)
+        pyautogui.click(970, 429)
         quit()
 
 while True:

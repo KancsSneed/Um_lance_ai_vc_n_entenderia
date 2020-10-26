@@ -25,7 +25,9 @@ janela = sg.Window('Tela de Login', layout)
 def loop():
     evento, valor = janela.read()
     if evento == 'Confirmar':
-        print(valor)
-    if evento == sg.WIN_CLOSED:
+        log = valor['log']
         sg.WINDOW_CLOSED
+    elif evento == sg.WIN_CLOSED:
+        sg.WINDOW_CLOSED
+
 loop()
