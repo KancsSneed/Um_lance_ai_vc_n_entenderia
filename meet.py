@@ -3,6 +3,7 @@ from datetime import date
 from datetime import datetime
 from time import sleep
 from pathlib import Path
+from PySimpleGUI import PySimpleGUI as sg
 
 hora = 3600
 
@@ -24,7 +25,25 @@ if fileObj.is_file() == True:
             log = valor
 #Caso não exista irá criar
 else:
-    log = input('''Digite o URL da reunião já logado com a conta etepd:     ''')
+    #Layout
+    sg.theme('DarkPurple1')
+    layout = [
+        [sg.Text('Cole o URL da reunião já logado com a conta etepd.com na caixa de texto abaixo.')],
+        [sg.Text('URL:'), sg.Input(key='log')],
+        [sg.Button('Confirmar')]
+    ]
+    #Janela
+    janela = sg.Window('Tela de Login', layout)
+    #Evento
+    while True:
+        evento, valor = janela.read()
+        if evento == sg.WINDOW_CLOSED:
+            break
+        if evento == 'Confirmar':
+            #Salvar os dados e fechar a interface
+            log = valor['log']
+            break
+        sleep(5)
     with open('log.txt', 'w') as arquivo:
         arquivo.write(str(log))
 

@@ -15,9 +15,9 @@ layout = [
 janela = sg.Window('Tela de Login', layout)
 #Evento
 while True:
-    eventos, valores = janela.read()
-    if eventos == sg.WINDOW_CLOSED:
+    evento, valor = janela.read()
+    if evento == sg.WINDOW_CLOSED:
         break
-    if eventos == 'Confirmar':
+    if evento == 'Confirmar':
         #Salvar os dados e fechar a interface
-        sg.WINDOW_CLOSED()
+        break
