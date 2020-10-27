@@ -7,7 +7,7 @@ from PySimpleGUI import PySimpleGUI as sg
 import pyautogui
 
 hora = 3600
-
+log = str
     #execução do programa
 
         #1° etapa - configurando o log, caso o usuário não tenha logado
@@ -50,69 +50,69 @@ else:
 def segunda():
     if now.hour == 16:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         quit()
 def terca():
     if now.hour == 18:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         quit()
 def quarta():
     if now.hour == 10:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 16:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         quit()
 def quinta():
     if now.hour == 9:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 15:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         quit()
 def sexta():
     if now.hour == 10:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         sleep(hora * 3)
     elif now.hour == 13:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         sleep(hora * 2)
     elif now.hour == 15:
         os.startfile(log)
-        sleep(3)
+        sleep(5)
         pyautogui.click(875, 501)
-        sleep(2)
+        sleep(4)
         pyautogui.click(970, 429)
         quit()
 
@@ -137,6 +137,6 @@ while True:
     elif data.isoweekday() == 6 or 7:
         print("É feriado danado, vai dormir.")
         quit()
-    sleep(120)
+    sleep(60)
 
 
