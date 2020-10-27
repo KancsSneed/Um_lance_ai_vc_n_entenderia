@@ -56,7 +56,7 @@ def segunda():
         pyautogui.click(970, 429)
         quit()
 def terca():
-    if now.hour == 18:
+    if now.hour == 15:
         os.startfile(log)
         sleep(3)
         pyautogui.click(875, 501)

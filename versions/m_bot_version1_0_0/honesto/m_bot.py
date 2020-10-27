@@ -51,7 +51,7 @@ def segunda():
     if now.hour == 16:
         quit()
 def terca():
-    if now.hour == 18:
+    if now.hour == 15:
         os.startfile(log)
         quit()
 def quarta():
