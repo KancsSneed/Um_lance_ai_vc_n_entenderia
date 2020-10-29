@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Bot informações</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            text-align: center;
+        }
+        h1{
+            font-size: 30pt;
+        }
+        img{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <h1>M-bot</h1>
+    <dir style="height: 2px; background-color: black;"></dir>
+    <div style="display: block;">
+        <p style="font-size: 15pt;">Como qualquer programa, o M-bot também tem bugs e alguns erros. Nesse arquivo, você poderá encontrar alguns dos erros mais evidentes e mais comuns e como resolve-los. Também ensinamos como fazer o programa iniciar junto com o windows.</p>
+        <img src="img/M-bot_logo.png" alt="" style="height: 100px;">
+    </div>
+    <dir style="height: 2px; background-color: black;"></dir>
+    <dir style="padding: 5%; background-color: white; border-radius: 10px; color: black;width: 45%; margin-left: 25%;">
+        <video width="520" height="340" controls>
+            <source src="clip/M_Bot.mp4" type="video/mp4">
+          </video>
+    </dir>
+    <dir style="height: 2px; background-color: black;"></dir>
+    <dir style="padding: 5%; background-color: white; border-radius: 10px; color: black;width: 45%; margin-left: 25%;">
+        <h2>1.0 Interface sem responder</h2>
+        <p>Quando você inicializar o programa pela primeira vez, caso seja horas, minutos ou segundos antes da aula a inteface irá ficar sem responder apôs clicar em "Confirmar" até a hora da aula começar. Não descobrimos o porque, mas provavelmente seja que o código de interface esteja intimamente envolvido com o horario da aula.</p>
+        <img src="img/log1.png" alt="">
+        <img src="img/log2.png" alt="">
+        <p>Para resolver isso, você pode fechar a inteface(irá fechar junto com o programa, então não precisa se preucupar com o ele rodando em segundo plano), ir na pasta em que ele está e verificar se criou um arquivo chamado "log.txt". Caso não tenha sido criado, você poderá criar o arquivo(com o mesmo nome e extenção) na mesma pasta.
+        </p>
+        <p>
+            Neste arquivo de texto, você deve verificar se está escrito o link da reunião já logado com a conta etepd.com no Google Meet. Caso não esteja, apenas copie e cole no arquivo.
+        </p>
+    </dir>
+    <dir style="height: 2px; background-color: black;"></dir>
+    <dir style="padding: 5%; background-color: white; border-radius: 10px; color: black;width: 45%; margin-left: 25%;">
+        <h2>2.0 Como fazer o programa iniciar junto com o Windows</h2>
+        <p>Para o programa iniciar com o Windows você precisa arrastar um atalho do programa(ou o proprio programa) para a pasta "Inicializar" no seguinte diretorio:</p>
+        <p>C:\Users\NOME DE USUARIO\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p>
+        <p>Você também pode apertar o botão do "Windows" + "R", escrever "shell:startup" e</p>
+        <img src="img/iniciar1.png" alt="">
+        <b><h2>Atenção!!!</h2></b>
+        <p>
+            O programa irá iniciar toda vez que você ligar o computador/notebook. E ficará verificando a cada 120 segundos se já deu a hora da aula, isso consome sim memoria, CPU e até energia em quantidades concideraveis para notebooks que não são um pouco mais "fortes". 
+        </p>
+        <p>
+            Em dias de sábado e domingo ele irá iniciar e fechar no tempo seguinte.
+        </p>
+        <a href="https://www.techtudo.com.br/dicas-e-tutoriais/2019/03/como-colocar-um-programa-para-iniciar-junto-com-o-windows-10.ghtml">Para mais informações</a>
+    </dir>
+    <dir style="height: 2px; background-color: black;"></dir>
+    <dir style="padding: 5%; background-color: white; border-radius: 10px; color: black; margin-left: 5%; width: 80%;">
+        <h1>Os salvadores</h1>
+        <div style="display:flex; margin-left: 10%;">
+            <div style="display: flex;">
+                <a href="https://github.com/KancsSneed" style="text-decoration: none; color: white;">
+                    <div style="background-color: rgb(0, 0, 0); padding: 20px 10px;">
+                        <img src="img/4fd1e962e7de54812474f0b5a4edc27ad90e7d2dv2_128.jpg" alt="" style="height: 300px; border-radius: 100%;">
+                        <h3>O ben 10 negativo</h3>
+                    </div>
+                </a>
+            </div>
+            <div style="height: 400px; width: 2px; background-color: black; margin-left: 100px; margin-right: 100px;"></div>
+            <div style="display: flex;">
+                <a href="https://github.com/AdelsonThalys" style="text-decoration: none; color: white;">
+                    <div style="background-color: rgb(0, 0, 0); padding: 20px 10px;">
+                        <img src="img/unknown.png" alt="" style="height: 300px; border-radius: 100%;">
+                        <h3>Adelson-sama</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        
+    </dir>
+
+</body>
+</html>
