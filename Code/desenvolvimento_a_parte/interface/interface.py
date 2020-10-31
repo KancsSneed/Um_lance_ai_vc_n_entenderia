@@ -30,28 +30,26 @@ class tela:
             for var in valor:
                 arquivo.write(str(var) + '\n')
 
-
-def registrado():
-    fileName = r"log.txt"
-    fileObj = Path(fileName)
-    fileObj.is_file()
-
-    if fileObj.is_file() == True:
-        with open('dependencias/log.txt', 'r') as arquivo:
-            log = arquivo.readline()
-            time = arquivo.readline()
-            print(log, time)
-    else:
-        with open('dependencias/log.txt', 'w') as arquivo:
-            inteface = tela()
-            inteface.resgistrar_log()
-
 #Dependencias
 dir = r'./dependencias'
 pasta = Path(dir)
-
 if pasta.is_dir() == False:
     os.mkdir(dir)
-    registrado()
+    os.mkdir(dir+'/img')
+
+fileName = r"log.txt"
+fileObj = Path(fileName)
+fileObj.is_file()
+
+if fileObj.is_file() == True:
+    with open('dependencias/log.txt', 'r') as arquivo:
+        log = arquivo.readline()
+        time = arquivo.readline()
+        print(log, time)
 else:
-    registrado()
+    with open('dependencias/log.txt', 'w') as arquivo:
+        inteface = tela()
+        inteface.resgistrar_log()
+
+
+

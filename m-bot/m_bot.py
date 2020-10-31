@@ -39,29 +39,25 @@ class tela:
                 arquivo.write(str(var) + '\n')
 
 
-def registrado():
-    fileName = r"dependencias/log.txt"
-    fileObj = Path(fileName)
-    fileObj.is_file()
-
-    if fileObj.is_file() == True:
-        with open('dependencias/log.txt', 'r') as arquivo:
-            log = arquivo.readline()
-            time = arquivo.readline()
-    else:
-        with open('dependencias/log.txt', 'w') as arquivo:
-            inteface = tela()
-            inteface.resgistrar_log()
-
 #Dependencias
 dir = r'./dependencias'
 pasta = Path(dir)
-
 if pasta.is_dir() == False:
     os.mkdir(dir)
-    registrado()
+
+#Registro de log
+fileName = r"dependencias/log.txt"
+fileObj = Path(fileName)
+fileObj.is_file()
+
+if fileObj.is_file() == True:
+    with open('dependencias/log.txt', 'r') as arquivo:
+        log = arquivo.readline()
+        time = arquivo.readline()
 else:
-    registrado()
+    with open('dependencias/log.txt', 'w') as arquivo:
+        inteface = tela()
+        inteface.resgistrar_log()
 
 # 2° Etapa - Aulas
 
@@ -120,6 +116,6 @@ while True:
     elif data.isoweekday() == 6 or 7:
         print("É feriado danado, vai dormir.")
         quit()
-    sleep(time)
+    sleep(int(time))
 
 
