@@ -1,5 +1,7 @@
 from PySimpleGUI import PySimpleGUI as sg 
 from pathlib import Path
+import os
+
 
 class tela:
     def __init__(self):
@@ -24,22 +26,32 @@ class tela:
         else:
             time = '240'
         valor = [self.values['log'], time]
-        with open('log.txt', 'a') as arquivo:
+        with open('dependencias/log.txt', 'a') as arquivo:
             for var in valor:
                 arquivo.write(str(var) + '\n')
 
 
-fileName = r"log.txt"
-fileObj = Path(fileName)
-fileObj.is_file()
+def registrado():
+    fileName = r"log.txt"
+    fileObj = Path(fileName)
+    fileObj.is_file()
 
-if fileObj.is_file() == True:
-    with open('log.txt', 'r') as arquivo:
-        log = arquivo.readline()
-        time = arquivo.readline()
-        print(log, time)
+    if fileObj.is_file() == True:
+        with open('dependencias/log.txt', 'r') as arquivo:
+            log = arquivo.readline()
+            time = arquivo.readline()
+            print(log, time)
+    else:
+        with open('dependencias/log.txt', 'w') as arquivo:
+            inteface = tela()
+            inteface.resgistrar_log()
+
+#Dependencias
+dir = r'./dependencias'
+pasta = Path(dir)
+
+if pasta.is_dir() == False:
+    os.mkdir(dir)
+    registrado()
 else:
-    with open('log.txt', 'w') as arquivo:
-        inteface = tela()
-        inteface.resgistrar_log()
-
+    registrado()
