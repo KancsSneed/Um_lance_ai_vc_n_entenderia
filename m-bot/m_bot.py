@@ -65,6 +65,11 @@ else:
 def segunda():
     if now.hour == 16:
         os.startfile(log)
+        time.sleep(1)
+        if pyautogui.locateOnScreen("dependencias/dispensar.py") != None:
+            pyautogui.click("dependencias/dispensar.py")
+        if pyautogui.locateOnScreen("dependencias/entrar.py") != None:
+            pyautogui.click("dependencias/entrar.py")
         quit()
 def terca():
     if now.hour == 15:
