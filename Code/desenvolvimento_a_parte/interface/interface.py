@@ -1,33 +1,45 @@
 from PySimpleGUI import PySimpleGUI as sg 
+from pathlib import Path
 
-#Layout
-sg.theme('DarkPurple1')
-layout = [
-    #[sg.Text('Nome'), sg.Input(key='name')],
-    #[sg.Text('Senha'), sg.Input(key='password', password_char='*')],
-    #[sg.Checkbox('Salvar o login?')],
-    #[sg.Button('Confirmado')]
-    [sg.Text('Cole o URL da reunião já logado com a conta etepd.com na caixa de texto abaixo.')],
-    [sg.Text('URL:'), sg.Input(key='log')],
-    [sg.Button('Confirmar')]
-]
-#Janela
-janela = sg.Window('Tela de Login', layout)
-#Evento
-#while True:
-#    evento, valor = janela.read()
-#    if evento == sg.WINDOW_CLOSED:
-#        break
-#    if evento == 'Confirmar':
-        #Salvar os dados e fechar a interface
-#        break
+class tela:
+    def __init__(self):
+        sg.theme('DarkPurple1')
+        #Layout's
+        layout = [
+            [sg.Text('Cole o URL da reunião já logado com a conta etepd.com na caixa de texto abaixo.')],
+            [sg.Text('URL:'), sg.Input(key='log')],
+            [sg.Text('De quanto em quanto tempo o programa deve verificar?')],
+            [sg.Radio('2 Minutos','calibragem', key='doisminutos'), sg.Radio('4 Minutos','calibragem', key='quatrominutos')],
+            [sg.Button('Confirmar')]
+        ]
+        #Janelas
+        janela = sg.Window('Tela de Login').layout(layout)
+        #Dados
+        self.Button, self.values = janela.read()
 
-def loop():
-    evento, valor = janela.read()
-    if evento == 'Confirmar':
-        log = valor['log']
-        sg.WINDOW_CLOSED
-    elif evento == sg.WIN_CLOSED:
-        sg.WINDOW_CLOSED
 
-loop()
+    def resgistrar_log(self):
+        if self.values['doisminutos'] == True:
+            time = '120'
+        else:
+            time = '240'
+        valor = [self.values['log'], time]
+        with open('log.txt', 'a') as arquivo:
+            for var in valor:
+                arquivo.write(str(var) + '\n')
+
+
+fileName = r"log.txt"
+fileObj = Path(fileName)
+fileObj.is_file()
+
+if fileObj.is_file() == True:
+    with open('log.txt', 'r') as arquivo:
+        log = arquivo.readline()
+        time = arquivo.readline()
+        print(log, time)
+else:
+    with open('log.txt', 'w') as arquivo:
+        inteface = tela()
+        inteface.resgistrar_log()
+

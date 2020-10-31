@@ -13,36 +13,46 @@ log = str
         #1° etapa - configurando o log, caso o usuário não tenha logado
 
     #Interface
+class tela:
+    def __init__(self):
+        sg.theme('DarkPurple1')
+        #Layout's
+        layout = [
+            [sg.Text('Cole o URL da reunião já logado com a conta etepd.com na caixa de texto abaixo.')],
+            [sg.Text('URL:'), sg.Input(key='log')],
+            [sg.Text('De quanto em quanto tempo o programa deve verificar?')],
+            [sg.Radio('2 Minutos','calibragem', key='doisminutos'), sg.Radio('4 Minutos','calibragem', key='quatrominutos')],
+            [sg.Button('Confirmar')]
+        ]
+        #Janelas
+        janela = sg.Window('Tela de Login').layout(layout)
+        #Dados
+        self.Button, self.values = janela.read()
+
+
+    def resgistrar_log(self):
+        if self.values['doisminutos'] == True:
+            time = '120'
+        else:
+            time = '240'
+        valor = [self.values['log'], time]
+        with open('log.txt', 'a') as arquivo:
+            for var in valor:
+                arquivo.write(str(var) + '\n')
+
+
 fileName = r"log.txt"
 fileObj = Path(fileName)
 fileObj.is_file()
 
-#Caso o arquivo exista o programa irá ler
 if fileObj.is_file() == True:
     with open('log.txt', 'r') as arquivo:
-        for valor in arquivo:
-            log = valor
-#Caso não exista irá criar
+        log = arquivo.readline()
+        time = arquivo.readline()
 else:
-    #Layout
-    sg.theme('DarkPurple1')
-    layout = [
-        [sg.Text('Cole o URL da reunião já logado com a conta etepd.com na caixa de texto abaixo.')],
-        [sg.Text('URL:'), sg.Input(key='log')],
-        [sg.Button('Confirmar')]
-    ]
-    #Janela
-    janela = sg.Window('Configuração de log', layout)
-    #Evento
-    while True:
-        evento, valor = janela.read()
-        if evento == sg.WINDOW_CLOSED:
-            break
-        if evento == 'Confirmar':
-            log = valor['log']
-            break
     with open('log.txt', 'w') as arquivo:
-        arquivo.write(log)
+        inteface = tela()
+        inteface.resgistrar_log()
 
 # 2° Etapa - Aulas
 
@@ -50,70 +60,34 @@ else:
 def segunda():
     if now.hour == 16:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         quit()
 def terca():
     if now.hour == 15:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         quit()
 def quarta():
     if now.hour == 10:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 16:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         quit()
 def quinta():
     if now.hour == 9:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         sleep(hora * 6)
     elif now.hour == 15:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         quit()
 def sexta():
     if now.hour == 10:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         sleep(hora * 3)
     elif now.hour == 13:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         sleep(hora * 2)
     elif now.hour == 15:
         os.startfile(log)
-        sleep(5)
-        pyautogui.click(875, 501)
-        sleep(4)
-        pyautogui.click(970, 429)
         quit()
 
 while True:
@@ -137,6 +111,6 @@ while True:
     elif data.isoweekday() == 6 or 7:
         print("É feriado danado, vai dormir.")
         quit()
-    sleep(60)
+    sleep(time)
 
 
