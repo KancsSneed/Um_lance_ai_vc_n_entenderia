@@ -7,6 +7,7 @@ from PySimpleGUI import PySimpleGUI as sg
 import pyautogui
 
 hora = 3600
+
     #execução do programa
 #depedencias
         #1° etapa - configurando o log, caso o usuário não tenha logado
@@ -60,16 +61,27 @@ else:
         inteface.resgistrar_log()
 
 # 2° Etapa - Aulas
-
+#função click
+def click():
+    while True:
+        sleep(1)
+        if pyautogui.locateOnScreen("dependencias/dispensar.py", grayscale=True, confidence = 0.8) != None:
+            sleep(0.5)
+            pyautogui.click("dependencias/dispensar.py")
+        elif pyautogui.locateOnScreen("dependencias/dispensar_2.py", grayscale=True, confidence = 0.8) != None:
+            sleep(0.5)
+            pyautogui.click("dependencias/dispensar_2.py")
+        elif pyautogui.locateOnScreen("dependencias/entrar.py", grayscale=True, confidence = 0.8) != None:
+            pyautogui.click("dependencias/entrar.py")
+            break
+        elif pyautogui.locateOnScreen("dependencias/entrar_2.py", grayscale=True, confidence = 0.8) != None:
+            pyautogui.click("dependencias/entrar_2.py")
+            break
 #Funções da semana
 def segunda():
     if now.hour == 16:
         os.startfile(log)
-        time.sleep(1)
-        if pyautogui.locateOnScreen("dependencias/dispensar.py") != None:
-            pyautogui.click("dependencias/dispensar.py")
-        if pyautogui.locateOnScreen("dependencias/entrar.py") != None:
-            pyautogui.click("dependencias/entrar.py")
+        click()
         quit()
 def terca():
     if now.hour == 15:
