@@ -68,14 +68,9 @@ def click():
         if pyautogui.locateOnScreen("dependencias/dispensar.py", grayscale=True, confidence = 0.8) != None:
             sleep(0.5)
             pyautogui.click("dependencias/dispensar.py")
-        elif pyautogui.locateOnScreen("dependencias/dispensar_2.py", grayscale=True, confidence = 0.8) != None:
-            sleep(0.5)
-            pyautogui.click("dependencias/dispensar_2.py")
-        elif pyautogui.locateOnScreen("dependencias/entrar.py", grayscale=True, confidence = 0.8) != None:
+        if pyautogui.locateOnScreen("dependencias/entrar.py", grayscale=True, confidence = 0.8) != None:
             pyautogui.click("dependencias/entrar.py")
-            break
-        elif pyautogui.locateOnScreen("dependencias/entrar_2.py", grayscale=True, confidence = 0.8) != None:
-            pyautogui.click("dependencias/entrar_2.py")
+            sleep(1)
             break
 #Funções da semana
 def segunda():
