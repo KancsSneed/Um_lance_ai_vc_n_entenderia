@@ -72,37 +72,55 @@ def click():
             break
 #Funções da semana
 def segunda():
-    if now.hour == 16:
+    print("Aula presencial!")
+    quit()
+def terca():
+    if now.hour == 9:
         os.startfile(log)
         click()
-        quit()
-def terca():
-    if now.hour == 15:
+        sleep(hora * 6)
+    elif now.hour == 15:
         os.startfile(log)
+        click()
         quit()
 def quarta():
     if now.hour == 10:
         os.startfile(log)
+        click()
         sleep(hora * 6)
     elif now.hour == 16:
         os.startfile(log)
+        click()
         quit()
 def quinta():
     if now.hour == 9:
         os.startfile(log)
-        sleep(hora * 6)
-    elif now.hour == 15:
+        click()
+        sleep(hora)
+    elif now.hour == 10:
         os.startfile(log)
+        click()
+        sleep(hora * 3)
+    elif now.hour == 13:
+        os.startfile(log)
+        click()
+        sleep(hora * 3)
+    elif now.hour == 16:
+        os.startfile(log)
+        click()    
         quit()
 def sexta():
     if now.hour == 10:
         os.startfile(log)
+        click()
         sleep(hora * 3)
     elif now.hour == 13:
         os.startfile(log)
+        click()
         sleep(hora * 2)
     elif now.hour == 15:
         os.startfile(log)
+        click()
         quit()
 
 while True:
