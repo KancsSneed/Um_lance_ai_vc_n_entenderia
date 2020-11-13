@@ -1,3 +1,4 @@
+import pygame
 import os
 from datetime import date
 from datetime import datetime
@@ -5,6 +6,7 @@ from time import sleep
 from pathlib import Path
 from PySimpleGUI import PySimpleGUI as sg
 import pyautogui
+
 
 hora = 3600
 
@@ -21,6 +23,8 @@ class tela:
             [sg.Text('URL:'), sg.Input(key='log')],
             [sg.Text('De quanto em quanto tempo o programa deve verificar?')],
             [sg.Radio('2 Minutos','calibragem', key='doisminutos'), sg.Radio('4 Minutos','calibragem', key='quatrominutos')],
+            [sg.Text('Configuração de alerta:')],
+            [sg.Radio('Yamete','mp3', key='yamete'), sg.Radio('Sonic','mp3', key='sonic')],
             [sg.Button('Confirmar')]
         ]
         #Janelas
@@ -34,7 +38,11 @@ class tela:
             time = '120'
         else:
             time = '240'
-        valor = [self.values['log'], time]
+        if self.values['sonic'] == True:
+            sound = 'Sonic.mp3'
+        elif self.values['yamete'] == True:
+            sound = 'Yamete.mp3'
+        valor = [self.values['log'], time, sound]
         with open('dependencias/log.txt', 'a') as arquivo:
             for var in valor:
                 arquivo.write(str(var) + '\n')
@@ -55,6 +63,7 @@ if fileObj.is_file() == True:
     with open('dependencias/log.txt', 'r') as arquivo:
         log = arquivo.readline()
         time = arquivo.readline()
+        sound = arquivo.readline()
 else:
     with open('dependencias/log.txt', 'w') as arquivo:
         inteface = tela()
@@ -70,6 +79,13 @@ def click():
             sleep(1)
             pyautogui.click('dependencias/entrar.py')
             break
+#Funções Diversas
+def reproduzindo_sound():
+    if sound != None:
+        pygame.mixer.music.load('sounds/', sound)
+        pygame.mixer.play()
+        pygame.event.wait()
+
 #Funções da semana
 def segunda():
     print("Aula presencial!")
