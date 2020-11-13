@@ -1,4 +1,4 @@
-import pygame
+from pygame import mixer
 import os
 from datetime import date
 from datetime import datetime
@@ -47,13 +47,6 @@ class tela:
             for var in valor:
                 arquivo.write(str(var) + '\n')
 
-
-#Dependencias
-dir = r'./dependencias'
-pasta = Path(dir)
-if pasta.is_dir() == False:
-    os.mkdir(dir)
-
 #Registro de log
 fileName = r"dependencias/log.txt"
 fileObj = Path(fileName)
@@ -82,9 +75,10 @@ def click():
 #Funções Diversas
 def reproduzindo_sound():
     if sound != None:
-        pygame.mixer.music.load('sounds/', sound)
-        pygame.mixer.play()
-        pygame.event.wait()
+        mixer.init()
+        mixer.music.load(f'dependencias/sounds/{sound}')
+        mixer.music.play()
+        sleep(3)
 
 #Funções da semana
 def segunda():
@@ -135,6 +129,7 @@ def sexta():
         click()
         sleep(hora * 2)
     elif now.hour == 15:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         quit()

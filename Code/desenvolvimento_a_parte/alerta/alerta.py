@@ -1,6 +1,8 @@
-import pygame
+from pygame import mixer
+import time
 sound = 'Yamete.mp3'
-pygame.init()
-pygame.mixer.music.load('sounds/'+ sound)
-pygame.mixer.music.play()
-pygame.event.wait()
+
+mixer.init()
+mixer.music.load('sounds/' + sound)
+mixer.music.play()
+time.sleep(3)
