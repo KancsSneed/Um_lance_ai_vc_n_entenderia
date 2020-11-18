@@ -99,10 +99,6 @@ def quarta():
     elif now.hour == 16:
         os.startfile(log)
         click()
-    elif now.hour == 20:
-        reproduzindo_sound()
-        os.startfile(log)
-        click()
         quit()
 def quinta():
     if now.hour == 9:
