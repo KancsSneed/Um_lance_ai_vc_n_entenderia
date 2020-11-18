@@ -6,6 +6,7 @@ from time import sleep
 from pathlib import Path
 from PySimpleGUI import PySimpleGUI as sg
 import pyautogui
+from playsound import playsound
 
 
 hora = 3600
@@ -75,10 +76,7 @@ def click():
 #Funções Diversas
 def reproduzindo_sound():
     if sound != None:
-        mixer.init()
-        mixer.music.load(f'dependencias/sounds/{sound}')
-        mixer.music.play()
-        sleep(3)
+        playsound(f"dependencias\sounds\{sound}")
 
 #Funções da semana
 def segunda():
@@ -99,6 +97,10 @@ def quarta():
         click()
         sleep(hora * 6)
     elif now.hour == 16:
+        os.startfile(log)
+        click()
+    elif now.hour == 20:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
@@ -129,7 +131,6 @@ def sexta():
         click()
         sleep(hora * 2)
     elif now.hour == 15:
-        #reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
