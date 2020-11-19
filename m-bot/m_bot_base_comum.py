@@ -1,4 +1,3 @@
-from pygame import mixer
 import os
 from datetime import date
 from datetime import datetime
@@ -73,65 +72,90 @@ def click():
             sleep(1)
             pyautogui.click('dependencias/entrar.py')
             break
+
+
+
+
+
+
 #Funções Diversas
 def reproduzindo_sound():
-    if sound != None:
-        playsound(f"dependencias\sounds\{sound}")
+    local_sound = sound.replace('\n','')
+    playsound(f'dependencias\sounds\{local_sound}')
+
+
+
+
+
+
+
 
 #Funções da semana
+
+
 def segunda():
     print("Aula presencial!")
     quit()
 def terca():
+
     if now.hour == 9:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 6)
     elif now.hour == 15:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quarta():
     if now.hour == 10:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 6)
     elif now.hour == 16:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quinta():
     if now.hour == 9:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora)
     elif now.hour == 10:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 3)
     elif now.hour == 13:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 3)
     elif now.hour == 16:
+        reproduzindo_sound()
         os.startfile(log)
         click()    
         quit()
 def sexta():
     if now.hour == 10:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 3)
     elif now.hour == 13:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         sleep(hora * 2)
     elif now.hour == 15:
+        reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
-
-
 
 
 

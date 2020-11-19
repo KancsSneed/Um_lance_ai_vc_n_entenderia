@@ -1,3 +1,3 @@
 from playsound import playsound
 
-playsound('.\sounds\Yamete.mp3')
+playsound('sounds\Sonic.mp3')
