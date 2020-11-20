@@ -82,6 +82,13 @@ def reproduzindo_sound():
     local_sound = sound.replace('\n','')
     playsound(f'dependencias\sounds\{local_sound}')
 
+def intervalo(horas_aula):
+    agora = datetime.now()
+    tempo = horas_aula - agora.hour
+    minutos = tempo * 60
+    segundos = minutos * 60
+    sleep(segunda)
+
 
 #Funções da semana
 id_aula = 0
@@ -89,59 +96,60 @@ def segunda():
     print("Aula presencial!")
     quit()
 def terca():
-    if now.hour == 9 and id_aula == 0:
-        id_aula = id_aula + 1
+    if now.hour == 9:
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 15 and id_aula == 1:
+        intervalo(15)
+    elif now.hour == 15:
         reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quarta():
-    if now.hour == 10 and id_aula == 0:
-        id_aula = id_aula + 1
+    if now.hour == 10:
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 16 and id_aula == 1:
+        intervalo(16)
+    elif now.hour == 16:
         reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quinta():
-    if now.hour == 9 and id_aula == 0:
-        id_aula = id_aula + 1
+    if now.hour == 9:
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 10 and id_aula == 1:
-        id_aula = id_aula + 1
+        intervalo(10)
+    elif now.hour == 10:
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 13 and id_aula == 2:
-        id_aula = id_aula + 1
+        intervalo(13)
+    elif now.hour == 13:
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 16 and id_aula == 3:
+        intervalo(16)
+    elif now.hour == 16:
         reproduzindo_sound()
         os.startfile(log)
         click()    
         quit()
 def sexta():
-    if now.hour == 10 and id_aula == 0:
-        id_aula = id_aula + 1
+    if now.hour == 10 :
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 13 and id_aula == 1:
+        intervalo(13)
+    elif now.hour == 13 :
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 15 and id_aula == 2:
+        intervalo(15)
+    elif now.hour == 15 :
         reproduzindo_sound()
         os.startfile(log)
         click()
@@ -153,6 +161,8 @@ def sexta():
 while True:
     now = datetime.now()
     data = date(now.year, now.month, now.day)
+    if now.minute == 00:
+        sleep(60)
 #segunda
     if data.isoweekday() == 1:
         segunda()  
