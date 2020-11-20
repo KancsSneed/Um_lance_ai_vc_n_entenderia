@@ -82,82 +82,70 @@ def reproduzindo_sound():
     local_sound = sound.replace('\n','')
     playsound(f'dependencias\sounds\{local_sound}')
 
-def tempo_que_falta():
-    agora = datetime.timedelta.now()
-
-
-
-
-
-
 
 #Funções da semana
-
-
+id_aula = 0
 def segunda():
     print("Aula presencial!")
     quit()
 def terca():
-
-    if now.hour == 9:
+    if now.hour == 9 and id_aula == 0:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 6)
-    elif now.hour == 15:
+    elif now.hour == 15 and id_aula == 1:
         reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quarta():
-    if now.hour == 10:
+    if now.hour == 10 and id_aula == 0:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 6)
-    elif now.hour == 16:
+    elif now.hour == 16 and id_aula == 1:
         reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
 def quinta():
-    if now.hour == 9:
+    if now.hour == 9 and id_aula == 0:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora)
-    elif now.hour == 10:
+    elif now.hour == 10 and id_aula == 1:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 3)
-    elif now.hour == 13:
+    elif now.hour == 13 and id_aula == 2:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-    elif now.hour == 16:
+    elif now.hour == 16 and id_aula == 3:
         reproduzindo_sound()
         os.startfile(log)
         click()    
         quit()
 def sexta():
-    if now.hour == 10:
+    if now.hour == 10 and id_aula == 0:
+        id_aula = id_aula + 1
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 3)
-    elif now.hour == 13:
+    elif now.hour == 13 and id_aula == 1:
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 2)
-    elif now.hour == 15:
+    elif now.hour == 15 and id_aula == 2:
         reproduzindo_sound()
         os.startfile(log)
         click()
         quit()
-
-
 
 
 
