@@ -87,7 +87,7 @@ def intervalo(horas_aula):
     tempo = horas_aula - agora.hour
     minutos = tempo * 60
     segundos = minutos * 60
-    sleep(segunda)
+    sleep(segundos)
 
 
 #Funções da semana
