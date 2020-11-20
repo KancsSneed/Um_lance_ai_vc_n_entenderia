@@ -68,13 +68,9 @@ def click():
         sleep(1)
         if pyautogui.locateOnScreen("dependencias/dispensar.py", grayscale=True, confidence = 0.8)  != None:
             pyautogui.click('dependencias/dispensar.py')
-            sleep(1)
+            sleep(2)
             pyautogui.click('dependencias/entrar.py')
             break
-
-
-
-
 
 
 #Funções Diversas
@@ -82,13 +78,12 @@ def reproduzindo_sound():
     local_sound = sound.replace('\n','')
     playsound(f'dependencias\sounds\{local_sound}')
 
-def intervalo(horas_aula):
+def intervalo():
     agora = datetime.now()
-    tempo = horas_aula - agora.hour
-    minutos = tempo * 60
+    minutos = 60 - agora.minute
     segundos = minutos * 60
+    print(segundos)
     sleep(segundos)
-
 
 #Funções da semana
 id_aula = 0
@@ -100,7 +95,7 @@ def terca():
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(15)
+        intervalo()
     elif now.hour == 15:
         reproduzindo_sound()
         os.startfile(log)
@@ -111,7 +106,7 @@ def quarta():
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(16)
+        intervalo()
     elif now.hour == 16:
         reproduzindo_sound()
         os.startfile(log)
@@ -122,17 +117,17 @@ def quinta():
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(10)
+        intervalo()
     elif now.hour == 10:
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(13)
+        intervalo()
     elif now.hour == 13:
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(16)
+        intervalo()
     elif now.hour == 16:
         reproduzindo_sound()
         os.startfile(log)
@@ -143,13 +138,13 @@ def sexta():
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(13)
-    elif now.hour == 13 :
+        intervalo()
+    elif now.hour == 20 :
         reproduzindo_sound()
         os.startfile(log)
         click()
-        intervalo(15)
-    elif now.hour == 15 :
+        intervalo()
+    elif now.hour == 21 :
         reproduzindo_sound()
         os.startfile(log)
         click()
@@ -182,5 +177,3 @@ while True:
         print("É feriado danado, vai dormir.")
         quit()
     sleep(int(time))
-
-
