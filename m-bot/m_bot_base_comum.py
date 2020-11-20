@@ -1,6 +1,5 @@
 import os
-from datetime import date
-from datetime import datetime
+from datetime import date, datetime, time, timedelta
 from time import sleep
 from pathlib import Path
 from PySimpleGUI import PySimpleGUI as sg
@@ -83,6 +82,8 @@ def reproduzindo_sound():
     local_sound = sound.replace('\n','')
     playsound(f'dependencias\sounds\{local_sound}')
 
+def tempo_que_falta():
+    agora = datetime.timedelta.now()
 
 
 
@@ -134,7 +135,6 @@ def quinta():
         reproduzindo_sound()
         os.startfile(log)
         click()
-        sleep(hora * 3)
     elif now.hour == 16:
         reproduzindo_sound()
         os.startfile(log)
