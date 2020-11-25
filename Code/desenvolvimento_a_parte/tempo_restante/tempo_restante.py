@@ -1,14 +1,15 @@
 from datetime import datetime, timedelta, time
-import time
+from time import sleep
 
 
-def intervalo(horas):
-    agora = datetime.now()
-    tempo = horas - agora.hour
-    tempo_minuto = tempo * 60
-    print(horas)
-    print(tempo)
-    print(tempo_minuto)
 
-intervalo(20)
+
+while True:
+    def intervalo():
+        agora = datetime.now()
+        minutos = 60 - agora.minute
+        segundos = minutos * 60
+        print(segundos)
+    intervalo()
+    sleep(1)
 
